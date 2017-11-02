@@ -5,8 +5,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class CalculatorController {
-	@RequestMapping("/")
+	@RequestMapping(value= {"/", "/calculator"})
 	public String getCalculator() {
 		return "calculatorForm";
 	}
+	
+	
 }
