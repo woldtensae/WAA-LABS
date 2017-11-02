@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -32,7 +33,7 @@ public class ProductController {
 	}
  	
     @RequestMapping(value={"/","/product"}, method = RequestMethod.GET)
-    public String inputProduct(Model model) {
+    public String inputProduct(@ModelAttribute("newProduct") Product newProduct , Model model) {
  
         List<Category> categories = categoryService.getAll();
         model.addAttribute("categories", categories);
@@ -60,7 +61,7 @@ public class ProductController {
     
     
     @RequestMapping(value="/listproducts")
-    public String listProducts(Model model ) {
+    public String listProducts(@ModelAttribute("newProduct") Product newProduct, Model model ) {
     	
     	
 		List<Product> list = productService.getAll();
