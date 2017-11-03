@@ -4,9 +4,14 @@
 
 <head>
 <title>Starbuck's</title>
+
 </head>
 <body>
 <h2>Ask for advice about your favorite roast:</h2>
+<h3>User: ${logedUser.name}</h3>
+<form action="logout" method="get">
+	<input type = "submit" value = "Logout"/>
+</form>
 <p />
 <form action = "advice" method="post">
 <select name="roast"   >

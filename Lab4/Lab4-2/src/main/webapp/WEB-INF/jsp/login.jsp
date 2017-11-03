@@ -23,7 +23,7 @@
 
 <p />
 
-	<form action="authenticate" method="post">
+	<form modelAttribute="newUser" action="authenticate" method="post">
  
 		<p>Login: </p>
 		<p> Name : <input type="text" id="name" name="name" /></p>

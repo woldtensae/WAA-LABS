@@ -9,6 +9,10 @@
 <title>Insert title here</title>
 </head>
 <body>
+<h3>User: ${logedUser.name}</h3>
+<form action="logout" method="get">
+	<input type = "submit" value = "Logout"/>
+</form>
 	<h2>Starbuck's ${param["roast"]} Roast Coffees:</h2>
 	<form action="advice.do" method="get">
  		
