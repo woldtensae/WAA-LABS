@@ -21,11 +21,12 @@ public class AuthenticationController {
 	@Autowired
 	UserService userService;
 	@RequestMapping(value="/authenticate", method=RequestMethod.POST)
-	public String authnticate(@ModelAttribute("newUser") User newUser,  HttpSession session){
+	public String authnticate(@ModelAttribute("newUser") User newUser,  HttpSession session, Model model){
 		String correctPassword = userService.getPasswordByName(newUser.getName());
 		
 		if(correctPassword!=null) {
 			session.setAttribute("logedUser", newUser);
+			//model.addAttribute("logedUser", newUser);
 				return "redirect:loginSuccessful";
 		}
 		else
