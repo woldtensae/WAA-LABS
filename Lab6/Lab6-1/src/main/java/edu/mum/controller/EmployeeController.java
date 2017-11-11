@@ -57,7 +57,7 @@ public class EmployeeController {
 			employeeImage.transferTo(
 				new File(rootDirectory + "resources\\images\\" + employee.getId() +".png"));
 			} catch (Exception e) {
-				throw new FileNotFoundException("message");
+				throw new NoFileUploadedException("employee Image saving failed");
 			}
 
 		String[] suppressedFields = bindingResult.getSuppressedFields();

@@ -12,7 +12,11 @@ import mum.edu.exception.NoFileUploadedException;
 public class ControllerExceptionHandler {
 	@ExceptionHandler(NoFileUploadedException.class) 
 	public ModelAndView handleError(HttpServletRequest req, NoFileUploadedException exception) {
-	
-		return null;
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.addObject("msg", exception.getMessage());
+		modelAndView.addObject("exception", exception);
+		modelAndView.addObject("url", req.getRequestURL());
+		modelAndView.setViewName("error");
+		return modelAndView;
 	}
 }

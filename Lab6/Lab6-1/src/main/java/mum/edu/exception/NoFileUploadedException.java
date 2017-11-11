@@ -12,4 +12,11 @@ public class NoFileUploadedException extends RuntimeException{
 	public NoFileUploadedException(String message) {
 		this.message = message;
 	}
+	public String getMessage() {
+		return message;
+	}
+	public void setMessage(String message) {
+		this.message = message;
+	}
+	
 }
