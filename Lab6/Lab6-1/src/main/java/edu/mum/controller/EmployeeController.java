@@ -2,6 +2,7 @@ package edu.mum.controller;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.Locale;
 
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
@@ -29,11 +30,13 @@ import mum.edu.exception.NoFileUploadedException;
 public class EmployeeController {
 	@Autowired
 	ServletContext servletContext;
+	
 
 	private static final Log logger = LogFactory.getLog(EmployeeController.class);
 
 	@RequestMapping(value = { "/", "employee_input" })
-	public String inputEmployee(@ModelAttribute("employee") Employee employee) {
+	public String inputEmployee(@ModelAttribute("employee") Employee employee, Locale locale) {
+		logger.info(locale);
 		return "EmployeeForm";
 	}
 
